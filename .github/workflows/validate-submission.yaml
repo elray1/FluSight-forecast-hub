@@ -26,6 +26,11 @@ jobs:
       - name: Update R
         run: |
           sudo apt-get update
+          
+      - name: Install withr depenency manually
+        run: |
+          wget http://cran.r-project.org/src/contrib/Archive/withr/withr_2.5.2.tar.gz
+          R CMD INSTALL withr_2.5.2.tar.gz
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
